@@ -1,6 +1,6 @@
 import { useHistory, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import BackButton from '../BackButton';
+import { useState, useEffect } from 'react';
 import { fetchSurahs } from '../../services/quranApi';
 
 const Header = () => {
@@ -25,31 +25,40 @@ const Header = () => {
   }, [location.pathname]);
 
   const getTitle = () => {
-    switch (true) {
-      case location.pathname === '/':
-        return 'The Noble Quran';
-      case location.pathname === '/reciters':
-        return 'Reciters';
-      case location.pathname.includes('/surah/'):
-        return surahName ? `Surah ${surahName}` : 'Loading...';
-      case location.pathname.includes('/reciter/'):
-        return 'Reciter';
-      default:
-        return 'The Noble Quran';
-    }
+    const title = (() => {
+      switch (true) {
+        case location.pathname === '/':
+          return 'The Noble Quran';
+        case location.pathname === '/reciters':
+          return 'Reciters';
+        case location.pathname.includes('/surah/'):
+          return surahName ? `Surah ${surahName}` : 'Loading...';
+        case location.pathname.includes('/reciter/'):
+          return 'Reciter';
+        default:
+          return 'The Noble Quran';
+      }
+    })();
+
+    return (
+      <span 
+        onClick={() => window.location.reload()}
+        className="cursor-pointer"
+      >
+        {title}
+      </span>
+    );
   };
 
   return (
     <header className="ios-header">
       <div className="flex items-center justify-between max-w-2xl mx-auto px-4">
-        <h1 
-          className="text-xl font-semibold flex-1 text-center font-quran cursor-pointer"
-          onClick={() => window.location.reload()}
-        >
+        {/* Back button should be inside the same flex container */}
+        {showBackButton && <BackButton onClick={() => history.goBack()} className="mr-2" />}
+        
+        <h1 className="text-xl font-semibold flex-1 text-center font-quran cursor-pointer">
           {getTitle()}
         </h1>
-
-        {showBackButton && <BackButton onClick={() => history.goBack()} />}
       </div>
     </header>
   );
