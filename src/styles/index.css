@@ -1209,3 +1209,6 @@ input:checked + .toggle-slider:before {
 h2.text-xl {
   margin-bottom: 0.75rem;
 }
+.ios-header{
+  padding: 0.3rem;
+}
