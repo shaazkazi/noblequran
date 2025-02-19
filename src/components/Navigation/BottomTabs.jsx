@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
-import surahsIcon from '../assets/surahs.svg';
-import micIcon from '../assets/mic.svg';
-import settingsIcon from '../assets/settings.svg';
+import SurahsIcon from "/src/assets/surahs.svg";
+import MicIcon from "/src/assets/mic.svg";
+import SettingsIcon from "/src/assets/settings.svg";
 
 const BottomTabs = () => {
   const location = useLocation();
