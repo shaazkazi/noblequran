@@ -4,7 +4,7 @@ const BottomTabs = () => {
   const location = useLocation();
 
   return (
-    <nav className="ios-bottom-tabs">
+    <nav className="ios-bottom-tabs safari_only">
       {[
         { path: "/", label: "Surahs", icon: "/surahs.svg" },
         { path: "/reciters", label: "Reciters", icon: "/mic.svg" },
