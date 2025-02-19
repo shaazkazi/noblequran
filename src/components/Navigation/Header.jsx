@@ -51,20 +51,16 @@ const Header = () => {
   };
 
   return (
-    <header className="ios-header">
-      <div className="flex items-center justify-between max-w-2xl mx-auto px-4">
-        <div className="w-24">
-          {showBackButton && <BackButton onClick={() => history.goBack()} />}
-        </div>
-        
-        <h1 className="text-xl font-semibold text-center flex-1 font-quran">
-          {getTitle()}
-        </h1>
-        
-        <div className="w-24" />
-      </div>
-    </header>
-  );
-};
+  <header className="ios-header">
+    <div className="flex items-center justify-between max-w-2xl mx-auto px-4">
+      <h1 className="text-xl font-semibold flex-1 text-center font-quran">
+        {getTitle()}
+      </h1>
+
+      {showBackButton && <BackButton onClick={() => history.goBack()} />}
+    </div>
+  </header>
+);
+
 
 export default Header;
