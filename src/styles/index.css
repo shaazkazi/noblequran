@@ -1328,4 +1328,62 @@ h2.text-xl {
     transform: translateX(-50%) translateY(0);
   }
 }
+/* Bottom Navigation Bar */
+.ios-bottom-tabs {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  padding: 16px 0; /* Increased padding to avoid home bar interference */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #ddd;
+  height: 70px; /* Slightly increased height */
+}
+
+/* Individual Tab Items */
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #6b7280; /* Gray text */
+  font-size: 12px;
+  transition: color 0.3s ease;
+}
+
+/* Active Tab */
+.tab-item.active {
+  color: #007aff; /* iOS Primary Blue */
+}
+
+/* SVG Icons */
+.tab-icon {
+  width: 28px; /* Adjust size */
+  height: 28px;
+  margin-bottom: 4px;
+}
+
+/* Safe Area Padding for iOS */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .ios-bottom-tabs {
+    padding-bottom: calc(env(safe-area-inset-bottom) + 16px);
+  }
+}
+
+/* Hide iOS Home Bar in Standalone Mode */
+html {
+  height: 100%;
+  overflow: hidden;
+  touch-action: manipulation;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+  touch-action: manipulation;
+}
+
 
