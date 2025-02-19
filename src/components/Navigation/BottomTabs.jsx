@@ -23,13 +23,13 @@ const BottomTabs = () => {
             <img
               src={icon}
               alt={label}
-              className={`tab-icon w-4 h-4 transition-transform duration-200 ${
+              className={`tab-icon w-5 h-5 transition-transform duration-200 ${
                 isActive ? "scale-105 opacity-100" : "opacity-80"
               }`}
             />
-            <span className="text-[10px] mt-1">{label}</span>
+            <span className="text-[12px] mt-1">{label}</span>
             {isActive && (
-              <span className="absolute -bottom-[2px] w-4 h-[2px] bg-ios-primary rounded-full transition-all duration-200"></span>
+              <span className="absolute -bottom-[4px] w-5 h-[2px] bg-ios-primary rounded-full transition-all duration-200"></span>
             )}
           </Link>
         );
