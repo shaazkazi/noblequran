@@ -1,24 +1,39 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from "react-router-dom";
 
 const BottomTabs = () => {
   const location = useLocation();
 
   return (
-    <nav className="ios-bottom-tabs">
-      <Link to="/" className={`flex flex-col items-center ${location.pathname === '/' ? 'text-ios-primary' : 'text-gray-600'}`}>
-        <img src="/surahs.svg" alt="Surahs" className="w-6 h-6 tab-icon" />
-        <span className="text-xs mt-1">Surahs</span>
-      </Link>
+    <nav className="ios-bottom-tabs flex justify-around fixed bottom-0 left-0 w-full h-60px bg-[var(--ios-background)] border-t border-gray-300 shadow-md z-100">
+      {[
+        { path: "/", label: "Surahs", icon: "/surahs.svg" },
+        { path: "/reciters", label: "Reciters", icon: "/mic.svg" },
+        { path: "/settings", label: "Settings", icon: "/settings.svg" },
+      ].map(({ path, label, icon }) => {
+        const isActive = location.pathname === path;
 
-      <Link to="/reciters" className={`flex flex-col items-center ${location.pathname === '/reciters' ? 'text-ios-primary' : 'text-gray-600'}`}>
-        <img src="/mic.svg" alt="Reciters" className="w-6 h-6 tab-icon" />
-        <span className="text-xs mt-1">Reciters</span>
-      </Link>
-
-      <Link to="/settings" className={`flex flex-col items-center ${location.pathname === '/settings' ? 'text-ios-primary' : 'text-gray-600'}`}>
-        <img src="/settings.svg" alt="Settings" className="w-6 h-6 tab-icon" />
-        <span className="text-xs mt-1">Settings</span>
-      </Link>
+        return (
+          <Link
+            key={path}
+            to={path}
+            className={`relative flex flex-col items-center transition-all duration-200 ${
+              isActive ? "text-ios-primary font-600" : "text-gray-600"
+            }`}
+          >
+            <img
+              src={icon}
+              alt={label}
+              className={`w-6 h-6 transition-transform duration-200 ${
+                isActive ? "scale-110 opacity-100" : "opacity-80"
+              }`}
+            />
+            <span className="text-xs mt-1">{label}</span>
+            {isActive && (
+              <span className="absolute bottom-0 w-6 h-3px bg-ios-primary rounded-full"></span>
+            )}
+          </Link>
+        );
+      })}
     </nav>
   );
 };
