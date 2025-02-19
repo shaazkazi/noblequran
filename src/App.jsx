@@ -71,9 +71,7 @@ function App() {
             />
           )}
 
-          <BottomTabs />
-
-          {/* iOS PWA Install Prompt */}
+          {/* iOS PWA Install Prompt - Positioned Above Bottom Nav */}
           {showInstallPrompt && (
             <div className="pwa-install-prompt">
               <img src="/icon512_rounded.png" alt="App Icon" />
@@ -81,6 +79,8 @@ function App() {
               <button onClick={dismissPrompt}>OK</button>
             </div>
           )}
+
+          <BottomTabs />
         </div>
       </Router>
     </SettingsProvider>
