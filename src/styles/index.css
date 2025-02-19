@@ -1262,4 +1262,70 @@ h2.text-xl {
     transform: translateX(-50%) translateY(0);
   }
 }
+/* Bottom Navigation Bar */
+.ios-bottom-tabs {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  padding: 12px 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #ddd;
+}
+
+/* iOS PWA Install Prompt - Above Bottom Nav */
+.pwa-install-prompt {
+  position: fixed;
+  bottom: 60px; /* Adjusted to be above the BottomTabs */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  padding: 12px 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  color: #333;
+  animation: fadeIn 0.5s ease-in-out;
+  z-index: 1000;
+}
+
+.pwa-install-prompt img {
+  width: 28px;
+  height: 28px;
+}
+
+.pwa-install-prompt button {
+  background: #007aff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.pwa-install-prompt button:hover {
+  background: #005bbf;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
 
