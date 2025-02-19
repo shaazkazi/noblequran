@@ -1587,4 +1587,35 @@ body.dark-mode .ios-bottom-tabs img {
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+.ios-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #ffffffe6;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.ios-header .flex {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Ensure back button and title are aligned */
+.ios-header h1 {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Push it to the left */
+}
 
