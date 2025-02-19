@@ -1432,9 +1432,45 @@ html, body {
   z-index: 50;
 }
 
+.ios-bottom-tabs {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--ios-background); /* Ensures proper visibility */
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+/* Ensure text and icons are visible */
+.ios-bottom-tabs a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: var(--ios-text);
+    transition: opacity 0.2s ease-in-out;
+}
+
 /* Dark Mode */
+body.dark-mode {
+    --ios-background: #000000;
+    --ios-text: #FFFFFF;
+}
+
 body.dark-mode .ios-bottom-tabs {
-  background: #000;
-  border-top: 1px solid #222;
+    background-color: #000; /* Black bottom bar */
+    border-top: 1px solid #222;
+}
+
+/* Make icons white in dark mode */
+body.dark-mode .ios-bottom-tabs img {
+    filter: invert(1); /* Makes icons white */
 }
 
