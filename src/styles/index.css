@@ -1674,10 +1674,10 @@ body.dark-mode .ios-bottom-tabs img {
 }
 
 .tab-icon {
-  width: 20px; /* Proper icon size */
-  height: 20px;
+  width: 25px; /* Proper icon size */
+  height: 25px;
   transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
-  margin-top: 8px; /* Adjust margin-top to lower the icons */
+  margin-top: 10px; /* Adjust margin-top to lower the icons */
 }
 
 .ios-bottom-tabs {
