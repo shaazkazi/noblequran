@@ -1618,4 +1618,29 @@ body.dark-mode .ios-bottom-tabs img {
     align-items: center;
     margin-right: auto; /* Push it to the left */
 }
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--ios-primary);
+    font-size: 1rem;
+    font-weight: 500;
+    background: transparent;
+    border: none;
+    padding: 0.75rem;
+    cursor: pointer;
+    margin-left: auto;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Subtle hover effect */
+.back-button:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+/* Click effect (gives a quick press effect) */
+.back-button:active {
+    transform: scale(0.95);
+}
 
