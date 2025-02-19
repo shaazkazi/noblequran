@@ -1685,7 +1685,7 @@ body.dark-mode .ios-bottom-tabs img {
   bottom: 0;
   left: 0;
   width: 100%;
-  min-height: 85px; /* Increased height to give more space for icons */
+  min-height: 90px; /* Increased height to give more space for icons */
   display: flex;
   justify-content: space-around;
   align-items: center;
