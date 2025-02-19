@@ -1405,4 +1405,36 @@ body.dark-mode .tab-icon,
     border-top: 1px solid #222; /* Slightly visible border */
   }
 }
+/* Ensure scrolling works */
+html, body {
+  height: 100%;
+  overflow: auto;
+}
+
+/* Adjust main content padding to avoid being covered by fixed tabs */
+.main-content {
+  padding-bottom: 80px; /* Should be >= bottom tab height */
+}
+
+/* Bottom Tabs */
+.ios-bottom-tabs {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 12px 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #ddd;
+  height: 60px; /* Adjust as needed */
+  z-index: 50;
+}
+
+/* Dark Mode */
+body.dark-mode .ios-bottom-tabs {
+  background: #000;
+  border-top: 1px solid #222;
+}
 
