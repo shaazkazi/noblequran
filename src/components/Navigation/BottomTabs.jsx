@@ -1,26 +1,23 @@
 import { Link, useLocation } from 'react-router-dom';
-import SurahsIcon from "/src/assets/surahs.svg";
-import MicIcon from "/src/assets/mic.svg";
-import SettingsIcon from "/src/assets/settings.svg";
 
 const BottomTabs = () => {
   const location = useLocation();
 
   return (
     <nav className="ios-bottom-tabs">
-      <Link to="/" className={`tab-item ${location.pathname === '/' ? 'active' : ''}`}>
-        <img src={surahsIcon} alt="Surahs" className="tab-icon" />
-        <span>Surahs</span>
+      <Link to="/" className={`flex flex-col items-center ${location.pathname === '/' ? 'text-ios-primary' : 'text-gray-600'}`}>
+        <img src="/surahs.svg" alt="Surahs" className="w-6 h-6" />
+        <span className="text-xs mt-1">Surahs</span>
       </Link>
-      
-      <Link to="/reciters" className={`tab-item ${location.pathname === '/reciters' ? 'active' : ''}`}>
-        <img src={micIcon} alt="Reciters" className="tab-icon" />
-        <span>Reciters</span>
+
+      <Link to="/reciters" className={`flex flex-col items-center ${location.pathname === '/reciters' ? 'text-ios-primary' : 'text-gray-600'}`}>
+        <img src="/mic.svg" alt="Reciters" className="w-6 h-6" />
+        <span className="text-xs mt-1">Reciters</span>
       </Link>
-      
-      <Link to="/settings" className={`tab-item ${location.pathname === '/settings' ? 'active' : ''}`}>
-        <img src={settingsIcon} alt="Settings" className="tab-icon" />
-        <span>Settings</span>
+
+      <Link to="/settings" className={`flex flex-col items-center ${location.pathname === '/settings' ? 'text-ios-primary' : 'text-gray-600'}`}>
+        <img src="/settings.svg" alt="Settings" className="w-6 h-6" />
+        <span className="text-xs mt-1">Settings</span>
       </Link>
     </nav>
   );
