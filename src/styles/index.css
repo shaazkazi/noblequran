@@ -1473,4 +1473,31 @@ body.dark-mode .ios-bottom-tabs {
 body.dark-mode .ios-bottom-tabs img {
     filter: invert(1); /* Makes icons white */
 }
+.play-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--ios-primary);
+    transition: 
+        transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+        background-color 0.2s ease, 
+        box-shadow 0.2s ease;
+}
+
+/* Hover Animation */
+.play-button:hover {
+    transform: scale(1.1); /* Slight enlargement */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Softer shadow effect */
+    background-color: var(--ios-secondary); /* Slight color change */
+}
+
+/* Active (click effect) */
+.play-button:active {
+    transform: scale(0.95); /* Press-down effect */
+}
+
 
