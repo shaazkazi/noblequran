@@ -1665,3 +1665,33 @@ body.dark-mode .ios-bottom-tabs img {
     height: 20px;
     transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
+
+/* Safari Mobile only fix */
+@media screen and (max-width: 767px) {
+  _::-webkit-full-page-media, _:future, :root .safari_only {
+    padding-bottom: 65px; /* Adds padding to avoid overlap with bottom bar */
+  }
+}
+
+/* Existing styles for bottom tab */
+.ios-bottom-tabs {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 65px; /* Ensures space for bottom tab */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--ios-background);
+  border-top: 1px solid #ddd;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.tab-icon {
+  width: 20px; /* Proper icon size */
+  height: 20px;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
