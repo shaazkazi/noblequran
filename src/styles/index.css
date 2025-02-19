@@ -1524,4 +1524,21 @@ body.dark-mode .ios-bottom-tabs img {
     transform: translateY(0); /* Reset on click */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /* Subtle press-down effect */
 }
+.search-input {
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.15); /* Light subtle border */
+    border-radius: 8px; /* Slight rounding for smooth UI */
+    color: var(--ios-text);
+    font-size: 17px;
+    padding: 8px 12px;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Focus Effect */
+.search-input:focus {
+    border-color: var(--ios-primary); /* Highlight border on focus */
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); /* Soft glow effect */
+    outline: none; /* Remove default outline */
+}
 
