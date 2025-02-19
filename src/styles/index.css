@@ -1559,3 +1559,32 @@ body.dark-mode .ios-bottom-tabs img {
     padding: 0;
     outline: none; /* Remove default outline */
 }
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--ios-primary);
+    font-size: 1rem;
+    font-weight: 500;
+    background: transparent;
+    border: none;
+    padding: 0.75rem;
+    cursor: pointer;
+    margin-left: auto; /* Pushes it to the right */
+}
+
+/* Ensure proper spacing in header */
+.ios-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #ffffffe6;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
