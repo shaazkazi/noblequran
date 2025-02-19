@@ -1677,7 +1677,7 @@ body.dark-mode .ios-bottom-tabs img {
   width: 20px; /* Proper icon size */
   height: 20px;
   transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
-  margin-top: 6px; /* Adjust margin-top to lower the icons */
+  margin-top: 8px; /* Adjust margin-top to lower the icons */
 }
 
 .ios-bottom-tabs {
