@@ -6,16 +6,12 @@ import AudioControls from './AudioControls';
 const AudioPlayer = ({ audioData, onClose }) => {
   const [surahName, setSurahName] = useState('');
   const [surahs, setSurahs] = useState([]);
-  const { isPlaying, progress, duration, currentUrl, initializeAudio, togglePlayPause, seek } = useAudioPlayer();
+  const { isPlaying, progress, duration, initializeAudio, togglePlayPause, seek, currentUrl } = useAudioPlayer();
 
   useEffect(() => {
     const loadSurahs = async () => {
-      try {
-        const allSurahs = await fetchSurahs();
-        setSurahs(allSurahs);
-      } catch (error) {
-        console.error('Failed to load surahs:', error);
-      }
+      const allSurahs = await fetchSurahs();
+      setSurahs(allSurahs);
     };
     loadSurahs();
   }, []);
@@ -24,7 +20,7 @@ const AudioPlayer = ({ audioData, onClose }) => {
     const updateSurahName = () => {
       if (surahs.length > 0) {
         const url = currentUrl || audioData.audioUrl;
-        const surahNumber = parseInt(url.split('/').pop().replace(/\D/g, ''));
+        const surahNumber = parseInt(url.split('/').pop().replace('.mp3', ''));
         const surah = surahs.find(s => s.id === surahNumber);
         if (surah) {
           setSurahName(surah.name_simple);
