@@ -1499,5 +1499,29 @@ body.dark-mode .ios-bottom-tabs img {
 .play-button:active {
     transform: scale(0.95); /* Press-down effect */
 }
+.ios-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: 
+        background-color 0.2s ease, 
+        transform 0.15s ease-in-out, 
+        box-shadow 0.2s ease-in-out;
+}
 
+/* Hover Effect */
+.ios-list-item:hover {
+    background-color: rgba(0, 0, 0, 0.03); /* Light gray hover effect */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Active (Click) Effect */
+.ios-list-item:active {
+    transform: translateY(0); /* Reset on click */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /* Subtle press-down effect */
+}
 
