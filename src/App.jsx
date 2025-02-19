@@ -11,7 +11,7 @@ import { useState, useEffect } from 'react';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import Settings from './components/Settings/Settings';
 import { SettingsProvider } from './context/SettingsContext';
-import './index.css'; // Import the updated CSS
+import './styles/index.css'
 
 function App() {
   const [currentAudio, setCurrentAudio] = useLocalStorage('currentAudio', null);
