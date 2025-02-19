@@ -1386,4 +1386,23 @@ body {
   touch-action: manipulation;
 }
 
+/* Default styles (Light Mode) - Keep original icon colors */
+.tab-icon {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 4px;
+}
+
+/* Dark Mode: Invert icons to white */
+body.dark-mode .tab-icon,
+@media (prefers-color-scheme: dark) {
+  .tab-icon {
+    filter: invert(1);
+  }
+
+  .ios-bottom-tabs {
+    background: #000; /* Dark mode: black background */
+    border-top: 1px solid #222; /* Slightly visible border */
+  }
+}
 
